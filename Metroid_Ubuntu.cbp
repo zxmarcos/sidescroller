@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Metroid" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="Level/TinyXML/;Level/;Anim/;Camera/;Collider/;Event/;Video/;Engine/;Input/;Core/;Sprites/SFFv2/;Sprites/;Anim/AIR/;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Metroid" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Metroid" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=athlon64" />
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O3" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="lua-5.2.0/src" />
+		</Compiler>
+		<Linker>
+			<Add library="SDLmain" />
+			<Add library="SDL" />
+			<Add library="z" />
+			<Add library="SDL_image" />
+			<Add library="SDL_ttf" />
+			<Add library="lua-5.2.0/src/liblua.a" />
+			<Add directory="D:/Arquivos de programas/CodeBlocks/MinGW/lib" />
+			<Add directory="../../boost/boost_1_46_1/lib" />
+		</Linker>
+		<Unit filename="src/TinyXML/tinyxml2.cpp">
+			<Option virtualFolder="Level/TinyXML/" />
+		</Unit>
+		<Unit filename="src/TinyXML/tinyxml2.h">
+			<Option virtualFolder="Level/TinyXML/" />
+		</Unit>
+		<Unit filename="src/airloader.cpp">
+			<Option virtualFolder="Anim/AIR/" />
+		</Unit>
+		<Unit filename="src/airloader.h">
+			<Option virtualFolder="Anim/AIR/" />
+		</Unit>
+		<Unit filename="src/airmaker/lexer.cpp">
+			<Option virtualFolder="Anim/" />
+		</Unit>
+		<Unit filename="src/airmaker/parser.cpp">
+			<Option virtualFolder="Anim/" />
+		</Unit>
+		<Unit filename="src/airmaker/parser.hpp">
+			<Option virtualFolder="Anim/" />
+		</Unit>
+		<Unit filename="src/animmanager.cpp">
+			<Option virtualFolder="Anim/" />
+		</Unit>
+		<Unit filename="src/animmanager.h">
+			<Option virtualFolder="Anim/" />
+		</Unit>
+		<Unit filename="src/animmap.cpp">
+			<Option virtualFolder="Anim/" />
+		</Unit>
+		<Unit filename="src/animmap.h">
+			<Option virtualFolder="Anim/" />
+		</Unit>
+		<Unit filename="src/camera.cpp">
+			<Option virtualFolder="Camera/" />
+		</Unit>
+		<Unit filename="src/camera.h">
+			<Option virtualFolder="Camera/" />
+		</Unit>
+		<Unit filename="src/colobject.cpp">
+			<Option virtualFolder="Collider/" />
+		</Unit>
+		<Unit filename="src/colobject.h">
+			<Option virtualFolder="Collider/" />
+		</Unit>
+		<Unit filename="src/colobjectgroup.cpp">
+			<Option virtualFolder="Collider/" />
+		</Unit>
+		<Unit filename="src/colobjectgroup.h">
+			<Option virtualFolder="Collider/" />
+		</Unit>
+		<Unit filename="src/entity.cpp">
+			<Option virtualFolder="Event/" />
+		</Unit>
+		<Unit filename="src/entity.h">
+			<Option virtualFolder="Event/" />
+		</Unit>
+		<Unit filename="src/framerater.cpp">
+			<Option virtualFolder="Video/" />
+		</Unit>
+		<Unit filename="src/framerater.h">
+			<Option virtualFolder="Video/" />
+		</Unit>
+		<Unit filename="src/game.cpp">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="src/game.h">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="src/inputbackend.cpp">
+			<Option virtualFolder="Input/" />
+		</Unit>
+		<Unit filename="src/inputbackend.h">
+			<Option virtualFolder="Input/" />
+		</Unit>
+		<Unit filename="src/inputsystem.cpp">
+			<Option virtualFolder="Input/" />
+		</Unit>
+		<Unit filename="src/inputsystem.h">
+			<Option virtualFolder="Input/" />
+		</Unit>
+		<Unit filename="src/inputvm.cpp">
+			<Option virtualFolder="Input/" />
+		</Unit>
+		<Unit filename="src/inputvm.h">
+			<Option virtualFolder="Input/" />
+		</Unit>
+		<Unit filename="src/layer.cpp">
+			<Option virtualFolder="Level/" />
+		</Unit>
+		<Unit filename="src/layer.h">
+			<Option virtualFolder="Level/" />
+		</Unit>
+		<Unit filename="src/levelmap.cpp">
+			<Option virtualFolder="Level/" />
+		</Unit>
+		<Unit filename="src/levelmap.h">
+			<Option virtualFolder="Level/" />
+		</Unit>
+		<Unit filename="src/log.cpp">
+			<Option virtualFolder="Core/" />
+		</Unit>
+		<Unit filename="src/main.cpp">
+			<Option virtualFolder="Core/" />
+		</Unit>
+		<Unit filename="src/property.cpp">
+			<Option virtualFolder="Level/" />
+		</Unit>
+		<Unit filename="src/property.h">
+			<Option virtualFolder="Level/" />
+		</Unit>
+		<Unit filename="src/scale2x/scale2x.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Video/" />
+		</Unit>
+		<Unit filename="src/scale2x/scale2x.h">
+			<Option virtualFolder="Video/" />
+		</Unit>
+		<Unit filename="src/scale2x/scale2xSDL.cpp">
+			<Option virtualFolder="Video/" />
+		</Unit>
+		<Unit filename="src/sffv2loader.cpp">
+			<Option virtualFolder="Sprites/SFFv2/" />
+		</Unit>
+		<Unit filename="src/sffv2loader.h">
+			<Option virtualFolder="Sprites/SFFv2/" />
+		</Unit>
+		<Unit filename="src/spritemanager.cpp">
+			<Option virtualFolder="Level/" />
+		</Unit>
+		<Unit filename="src/spritemanager.h">
+			<Option virtualFolder="Sprites/" />
+		</Unit>
+		<Unit filename="src/spritemap.cpp">
+			<Option virtualFolder="Sprites/" />
+		</Unit>
+		<Unit filename="src/spritemap.h">
+			<Option virtualFolder="Sprites/" />
+		</Unit>
+		<Unit filename="src/system.h">
+			<Option virtualFolder="Core/" />
+		</Unit>
+		<Unit filename="src/tileimage.cpp">
+			<Option virtualFolder="Level/" />
+		</Unit>
+		<Unit filename="src/tileimage.h">
+			<Option virtualFolder="Level/" />
+		</Unit>
+		<Unit filename="src/tileset.cpp">
+			<Option virtualFolder="Level/" />
+		</Unit>
+		<Unit filename="src/tileset.h">
+			<Option virtualFolder="Level/" />
+		</Unit>
+		<Unit filename="src/util.cpp">
+			<Option virtualFolder="Core/" />
+		</Unit>
+		<Unit filename="src/util.h">
+			<Option virtualFolder="Core/" />
+		</Unit>
+		<Unit filename="src/videosystem.cpp">
+			<Option virtualFolder="Video/" />
+		</Unit>
+		<Unit filename="src/videosystem.h">
+			<Option virtualFolder="Video/" />
+		</Unit>
+		<Unit filename="src/xyobject.cpp">
+			<Option virtualFolder="Event/" />
+		</Unit>
+		<Unit filename="src/xyobject.h">
+			<Option virtualFolder="Event/" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
