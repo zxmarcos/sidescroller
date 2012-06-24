@@ -7,6 +7,7 @@
 #include <list>
 #include <SDL/SDL_ttf.h>
 #include <string>
+#include <sstream>
 #include <cstdlib>
 #include "game.h"
 #include "levelmap.h"
@@ -21,7 +22,7 @@
 
 using namespace std;
 
-#define DEBUG_SHOW  1
+#define DEBUG_SHOW  0
 
 #define TEST_ENT 0
 
@@ -79,7 +80,7 @@ int Game::init()
     g_Camera->setMap(g_Map);
     g_Camera->setMainEntity(g_Ent);
 
-    g_Video->SetClearColor(255,255,0);
+    g_Video->SetClearColor(0,0,0);
 
     iVM = new InputVM();
 
@@ -109,6 +110,7 @@ void Game::run() {
     while (g_Input->isRunning()) {
 
         g_Video->begin();
+        g_Video->clear();
         g_Input->update();
         iVM->update();
         g_Ent->update();
@@ -310,7 +312,7 @@ void Game::debug()
     debugPrintf(_buf);
 
 #if 1
-    string *s = new string();
+    stringstream s;
 
     for (int i = iVM->bufpos-1; i >= 0 ; i--) {
         int thiscmd = 0;
@@ -319,38 +321,35 @@ void Game::debug()
                 continue;
             else
             if (iVM->kbuffer[i].sym[n].state == KS_PRESSED) {
-                if (thiscmd) s->append("+"); ++thiscmd;
-                s->append(InputSymbolName[n]);
+                if (thiscmd) s << ("+"); ++thiscmd;
+                s << (InputSymbolName[n]);
             }
             else
             if (iVM->kbuffer[i].sym[n].state == KS_RELEASE) {
-                if (thiscmd) s->append("+"); ++thiscmd;
-                s->append("~");
-                s->append(InputSymbolName[n]);
+                if (thiscmd) s << ("+"); ++thiscmd;
+                s << ("~");
+                s << (InputSymbolName[n]);
             }
             else
             if (iVM->kbuffer[i].sym[n].state == KS_HOLDING) {
-                if (thiscmd) s->append("+"); ++thiscmd;
-                s->append("/");
-                s->append(InputSymbolName[n]);
+                if (thiscmd) s << ("+"); ++thiscmd;
+                s << ("/");
+                s << (InputSymbolName[n]);
             }
         }
-        s->append(",");
+        s << (",");
         thiscmd = 0;
     }
 
-    const char *str = s->c_str();
-    debugPrintf(str);
+    string str(s.str());
+    const char *rawstr = str.c_str();
+    debugPrintf(rawstr);
 #if 1
-    if (s->size() > 1) {
-        s->append("\n");
-        Log(str);
+    if (str.size() > 1) {
+        Log(rawstr);
+        Log("\n");
     }
 #endif
-    //if (str)
-    //delete str;
-    //if (s)
-    //delete s;
 #endif
     SDL_Rect r;
     r.x = 0;

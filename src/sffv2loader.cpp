@@ -457,12 +457,12 @@ SpriteDef::~SpriteDef() {
 // imagem destruida pelo shared_ptr
 //    if (surface)
 //        SDL_FreeSurface(surface);
-    if (hsurface)
-        SDL_FreeSurface(hsurface);
-    if (vsurface)
-        SDL_FreeSurface(vsurface);
-    if (vhsurface)
-        SDL_FreeSurface(vhsurface);
+//    if (hsurface)
+//        SDL_FreeSurface(hsurface);
+//    if (vsurface)
+//        SDL_FreeSurface(vsurface);
+//    if (vhsurface)
+//        SDL_FreeSurface(vhsurface);
 };
 
 PaletteDef::PaletteDef() {

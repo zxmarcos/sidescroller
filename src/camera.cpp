@@ -81,7 +81,7 @@ void Camera::update() {
 
 		pMap->render(xPos, yPos);
 
-		pMap->blit();
+
 		//g_Video->drawGrid();
 
 
@@ -111,6 +111,7 @@ void Camera::update() {
 		g_Video->drawAxis(dx, dy);
 
 		drawEntitys();
+		pMap->blit();
 
     }
 }

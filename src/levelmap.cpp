@@ -91,6 +91,7 @@ int LevelMap::open(const char *name)
     renderBuffer = g_Video->Surface(scrXTiles * tileWidth,
                                     scrYTiles * tileHeight,
                                     16);
+    SDL_SetColorKey(renderBuffer, SDL_SRCCOLORKEY, SDL_MapRGB(renderBuffer->format, 255, 0, 255));
 
     // carregamos a informação sobre o plano Z do cenário
     // entre os layers
@@ -480,7 +481,7 @@ void LevelMap::render(int x, int y)
     }
 
     // limpa o buffer
-    //SDL_FillRect(renderBuffer, NULL, g_Video->Color(60, 100, 100));
+    SDL_FillRect(renderBuffer, NULL, SDL_MapRGB(renderBuffer->format, 255, 0, 255));
 
     int xScroll = 0;
     int yScroll = 0;
@@ -499,7 +500,6 @@ void LevelMap::render(int x, int y)
 
 
     // Desenhamos todos os layers
-    //foreach (Layer *layer, listLayers) {
     for (list<Layer*>::iterator i=listLayers.begin(); i != listLayers.end(); i++) {
             Layer *layer = *i;
 
