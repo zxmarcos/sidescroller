@@ -159,8 +159,6 @@ void simple2x(SDL_Surface *src, SDL_Surface *dst)
 	Uint8* srcpix = (Uint8*)src->pixels;
 	Uint8* dstpix = (Uint8*)dst->pixels;
 
-	const int srcpitch = src->pitch;
-	const int dstpitch = dst->pitch;
 	const int width = src->w;
 	const int height = src->h;
 

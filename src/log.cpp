@@ -28,7 +28,7 @@ void Log(const char *fmt, ...) {
     for (int i = 0; i < (innerLevel * innerSize); i++)
         buffer[i] = ' ';
 
-    fprintf(logfp, buffer);
+    fprintf(logfp, "%s", buffer);
     vfprintf(logfp, fmt, va);
     va_end(va);
 }
